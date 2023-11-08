@@ -6,7 +6,11 @@
 		"tsx": "^3.14.0"
 	},
 	"name": "semncapital.com",
-	"scripts": {},
+	"scripts": {
+		"dev": "tsx ./build.ts",
+		"dev:serve": "npm run dev:watch -- --serve",
+		"dev:watch": "tsx --watch ./build.ts"
+	},
 	"type": "module",
 	"version": "0.0.1"
 }
