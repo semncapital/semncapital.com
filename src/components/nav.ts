@@ -4,7 +4,7 @@ import route from './routes.ts';
 
 const template = () => `
 <nav>
-	${route(`about`, `About`)}
+	${route(`home`, `About`)}
 	${route(`preferences`, `Investment Preferences`)}
 	${route(`portfolio`, `Portfolio`)}
 	${route(`contact`, `Contact`)}
