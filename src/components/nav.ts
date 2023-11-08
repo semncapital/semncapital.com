@@ -1,7 +1,14 @@
 import { Page } from '@robertakarobin/web/index.ts';
 
+import route from './routes.ts';
+
 const template = () => `
-<h1>Hello world</h1>
+<nav>
+	${route(`about`, `About`)}
+	${route(`preferences`, `Investment Preferences`)}
+	${route(`portfolio`, `Portfolio`)}
+	${route(`contact`, `Contact`)}
+</nav>
 `;
 
 export class HomePage extends Page {

@@ -1,7 +1,7 @@
 {
 	"dependencies": {
 		"@robertakarobin/eslint-config-ts": "^0.0.3",
-		"@robertakarobin/web": "^0.0.8",
+		"@robertakarobin/web": "^0.0.9",
 		"esbuild": "^0.19.5",
 		"tsx": "^3.14.0"
 	},
