@@ -1,5 +1,4 @@
 import esbuild from 'esbuild';
-import { fileURLToPath } from 'url';
 import fs from 'fs';
 import { getBuildOptions } from '@robertakarobin/web/build.ts';
 import path from 'path';
@@ -8,11 +7,16 @@ import { resolve, routes } from './src/routes.ts';
 import baseStyles from './src/styles.css.ts';
 import layout from './src/pages/_layout.ts';
 
-const baseDir = path.join(path.dirname(fileURLToPath(import.meta.url)), `./src`);
-const distDir = path.join(baseDir, `/public`);
+const baseDir = path.join(process.cwd(), `./src`);
+const distDir = path.join(process.cwd(), `./public`);
 
+const assetsDist = path.join(distDir, `./assets`);
+const assetsTemp = path.join(baseDir, `./assets`);
+
+fs.renameSync(assetsDist, assetsTemp);
 fs.rmSync(distDir, { force: true, recursive: true });
 fs.mkdirSync(distDir);
+fs.renameSync(assetsTemp, assetsDist);
 
 fs.writeFileSync(path.join(distDir, `styles.css`), baseStyles);
 
