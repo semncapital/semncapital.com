@@ -1,0 +1,14 @@
+{
+	"eslint.options": {
+		"extensions": [".js", ".json", ".ts"]
+	},
+	"eslint.enable": true,
+	"eslint.validate": [
+		"javascript",
+		"json",
+		"jsonc",
+		"typescript"
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true
+}

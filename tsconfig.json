@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"baseUrl": "."
+	},
+	"extends": [
+		"@robertakarobin/eslint-config-ts"
+	]
+}
