@@ -1,6 +1,6 @@
 import { Component } from '@robertakarobin/web/index.ts';
 
-import route from './routes.ts';
+import route from './route.ts';
 
 const template = () => `
 <nav>

@@ -14,7 +14,15 @@ export default (contents: string) => `
 	</head>
 	<body>
 		${nav()}
-		<div id="output">${contents}</div>
+
+		<main id="output">${contents}</main>
+
+		<footer>
+			<h2>Southeast Minnesota Capital Fund</h2>
+
+			<address>221 1st Avenue SW. Suite 202<br />
+			Rochester, MN 55902</address>
+		</footer>
 	</body>
 </html>
 `;
