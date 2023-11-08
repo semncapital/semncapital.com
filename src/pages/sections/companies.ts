@@ -126,7 +126,7 @@ export default () => companiesByOrder.map(company => `
 		<h3>
 			<img
 				alt="${company.title}"
-				src="/images/${company.logo}"
+				src="/assets/images/${company.logo}"
 				/>
 
 			${company.title} ('${Math.round(company.year)})

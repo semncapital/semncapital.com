@@ -40,7 +40,7 @@ const preferencesByOrder = [
 export default () => preferencesByOrder.map(preference => `
 <li class="investPref">
 	<h3>
-		<span class="fa-solid ${preference.logo}"></span>
+		<span class="fa fa-solid ${preference.logo}"></span>
 		${preference.title}
 	</h3>
 
