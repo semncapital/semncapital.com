@@ -6,4 +6,3 @@ const $output = document.getElementById(`output`)!;
 router.subscribe(async path => {
 	$output.innerHTML = await resolve(path) || ``;
 });
-router.onChange();

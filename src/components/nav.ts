@@ -1,4 +1,4 @@
-import { Page } from '@robertakarobin/web/index.ts';
+import { Component } from '@robertakarobin/web/index.ts';
 
 import route from './routes.ts';
 
@@ -11,9 +11,8 @@ const template = () => `
 </nav>
 `;
 
-export class HomePage extends Page {
+export class NavComponent extends Component {
 	template = template;
-	title = ``;
 }
 
-export default HomePage.toFunction(HomePage);
+export default NavComponent.toFunction(NavComponent);

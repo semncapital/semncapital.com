@@ -8,7 +8,7 @@ import { resolve, routes } from './src/routes.ts';
 import baseStyles from './src/styles.css.ts';
 import layout from './src/pages/_layout.ts';
 
-const baseDir = path.dirname(fileURLToPath(import.meta.url));
+const baseDir = path.join(path.dirname(fileURLToPath(import.meta.url)), `./src`);
 const distDir = path.join(baseDir, `/public`);
 
 fs.rmSync(distDir, { force: true, recursive: true });
@@ -38,7 +38,7 @@ await esbuild.build({
 	},
 	bundle: true,
 	entryPoints: [
-		{ in: path.join(baseDir, `./src/script.ts`), out: `script` },
+		{ in: path.join(baseDir, `./script.ts`), out: `script` },
 		...buildOptions.entryPoints,
 	],
 	external: [
