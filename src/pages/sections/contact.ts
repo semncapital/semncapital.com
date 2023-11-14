@@ -2,11 +2,12 @@ import route from '../../components/route.ts';
 
 export default () => `
 <markdown>
-###	For Entrepreneurs
+### Questions about SE MN Capital Fund?
 
-Please first review our ${route(`preferences`, `investment preferences`)}. If you feel your company may be a good fit for us, please send a short description of your company or short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com). Or, better yet, submit them to our Gust.com page, [gust.com/organizations/southeast-minnesota-capital-fund](https://www.gust.com/organizations/southeast-minnesota-capital-fund).
+Please send an email to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
 
-### For Members/Investors
+### Entrepreneurs
 
-SMCF is currently raising its second fund which will be open to "accredited investors" as defined by the Securities and Exchange Commission. If you would like to consider becoming a member, please contact [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
+Please first review our ${route(`preferences`, `Investment Preferences`)}. If you feel your company may be a
+good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
 </markdown>`;

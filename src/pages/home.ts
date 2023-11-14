@@ -6,21 +6,23 @@ import contact from './sections/contact.ts';
 import preferences from './sections/preferences.ts';
 
 const template = () => `
-<header>
+<header class="section">
 	<h1>Southeast Minnesota Capital Fund</h1>
 
 	<p>We are a member-driven angel investment group focused on backing Minnesota entrepreneurs, and dedicated to fostering innovation and economic growth in Rochester and the Greater Southeast Minnesota region.</p>
 </header>
 
-<section>
+<section class="section">
 	<header>
 		<h2>About</h2>
 	</header>
 
-	${about()}
+	<ul>
+		${about()}
+	</ul>
 </section>
 
-<section >
+<section class="section">
 	<header>
 		<h2>Investment Preferences</h2>
 	</header>
@@ -30,7 +32,7 @@ const template = () => `
 	</ul>
 </section>
 
-<section>
+<section class="section">
 	<header>
 		<h2>Portfolio Companies</h2>
 
@@ -42,7 +44,7 @@ const template = () => `
 	</ul>
 </section>
 
-<section>
+<section class="section">
 	<header>
 		<h2>Contact</h2>
 	</header>

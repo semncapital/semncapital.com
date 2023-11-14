@@ -32,4 +32,13 @@ a:hover {
 main {
 	padding-top: ${css.navHeight};
 }
+
+.section {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 60vh;
+	padding: ${css.marginPageY} ${css.marginPageX};
+}
 `;

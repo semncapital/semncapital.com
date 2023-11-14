@@ -8,8 +8,7 @@ const preferences = {
 	early: preference(
 		`Seed and early stage`,
 		`fa-flask`,
-		`We are angel investors who invest in seed and early stage rounds where equity capital is most scarce
-		and opportunities for substantial gains are highest`
+		`We invest in seed and early stage rounds where equity capital is most scarce and opportunities for substantial gains are highest.`
 	),
 	entrepreneurs: preference(
 		`Great entrepreneurs and founders`,
@@ -20,8 +19,7 @@ const preferences = {
 	innovation: preference(
 		`Innovation`,
 		`fa-gears`,
-		`We favor companies with innovative technologies and/or product ideas. We are industry agnostic, but
-		invest mostly in the med tech and life science sectors.`,
+		`We favor companies with innovative technologies and/or product ideas. We invest mostly in the med tech and life science sectors but we will consider promising opportunities in other sectors.`,
 	),
 	mn: preference(
 		`Minnesota companies`,

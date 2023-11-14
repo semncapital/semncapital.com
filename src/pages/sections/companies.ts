@@ -22,6 +22,13 @@ const companies = {
 		`abilitech.png`,
 		`https://abilitechmedical.com/`,
 	),
+	activeortho: company(
+		`ActivOrtho`,
+		23.00,
+		`Devices for active orthopedic compression`,
+		`activortho.png`,
+		`https://activortho.com/`
+	),
 	ambient: company(
 		`Ambient Clinical`,
 		18.40,
@@ -43,6 +50,13 @@ const companies = {
 		`geneticure.png`,
 		`https://geneticure.com`
 	),
+	leah: company(
+		`LEAH Laboratories`,
+		23.10,
+		`Biotech therapies for canines`,
+		`leah.png`,
+		`https://leahlabs.com`
+	),
 	marani: company(
 		`Marani`,
 		19.01,
@@ -57,6 +71,13 @@ const companies = {
 		`marblehead.png`,
 		``,
 		true,
+	),
+	mnmed: company(
+		`Minnesota Medical Technologies`,
+		23.30,
+		`Devices for fecal incontinence`,
+		`mnmed.png`,
+		`https://mnmedicaltechnologies.com`
 	),
 	nested: company(
 		`Nested Knowledge`,
@@ -114,6 +135,13 @@ const companies = {
 		`vyriad.png`,
 		`https://www.vyriad.com/`
 	),
+	xdot: company(
+		`xDot Medical`,
+		23.20,
+		`Devices for cardiovascular procedures`,
+		`xdot.svg`,
+		`https://www.xdotmedical.com`
+	),
 };
 
 const companiesByOrder = Object.values(companies)
@@ -128,8 +156,6 @@ export default () => companiesByOrder.map(company => `
 				alt="${company.title}"
 				src="/assets/images/${company.logo}"
 				/>
-
-			${company.title} ('${Math.round(company.year)})
 		</h3>
 
 		<div>
