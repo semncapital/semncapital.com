@@ -1,6 +1,6 @@
 import { Component, Page } from '@robertakarobin/web/index.ts';
 
-import route from '../components/route.ts';
+import nav from '../components/nav.ts';
 
 export default (contents: string) => `
 <!DOCTYPE html>
@@ -15,26 +15,7 @@ export default (contents: string) => `
 		<style>${Array.from(Component.styleCache.values()).join(`\n`)}</style>
 	</head>
 	<body>
-		<nav class="nav">
-			${route(`home`, `
-				<img
-					alt="Southeast Minnesota Capital Fund logo"
-					src="/assets/images/smcf-sm.svg"
-				/>
-			`, { class: `nav__logo` })}
-
-			<button
-				aria-label="Open sidebar"
-				class="nav__toggle"
-			>☰</button>
-
-			<ul class="nav__links">
-				<li>${route(`home`, `About`)}</li>
-				<li>${route(`preferences`, `Investment Preferences`)}</li>
-				<li>${route(`portfolio`, `Portfolio`)}</li>
-				<li>${route(`contact`, `Contact`)}</li>
-			</ul>
-		</nav>
+		${nav()}
 
 		<button
 			aria-label="Close sidebar"
