@@ -11,8 +11,4 @@ class CustomBuilder extends Builder<typeof app[`routes`]> {
 
 const builder = new CustomBuilder();
 
-if (process.argv.includes(`--serve`)) {
-	await builder.serve({ watch: true });
-} else {
-	await builder.build();
-}
+await builder.build({ serve: process.argv.includes(`--serve`) });
