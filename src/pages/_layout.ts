@@ -1,4 +1,4 @@
-import { Page } from '@robertakarobin/web/index.ts';
+import { Component, Page } from '@robertakarobin/web/index.ts';
 
 import nav from '../components/nav.ts';
 
@@ -13,6 +13,7 @@ export default (contents: string) => `
 		<script src="/script.js" type="module"></script>
 		<link rel="stylesheet" href="/styles.css" />
 		<link rel="stylesheet" href="/assets/css/fontawesome.min.css" />
+		<style>${Array.from(Component.styleCache.values()).join(`\n`)}</style>
 	</head>
 	<body>
 		${nav()}

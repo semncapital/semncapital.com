@@ -132,7 +132,9 @@ export default () => companiesByOrder.map(company => `
 			${company.title} ('${Math.round(company.year)})
 		</h3>
 
-		<p>${company.description}</p>
+		<div>
+			<markdown>${company.description}</markdown>
+		</div>
 	</a>
 </li>
 `).join(`\n`);

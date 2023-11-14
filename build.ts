@@ -1,16 +1,18 @@
-import { build, type BuildOptions, watchAndServe } from '@robertakarobin/web/build.ts';
+import { Builder } from '@robertakarobin/web/build.ts';
 
-import { resolve, routes } from './src/routes.ts';
+import { type app } from './src/app.ts';
 import layout from './src/pages/_layout.ts';
 
-const options: BuildOptions<typeof routes> = {
-	layout,
-	resolve,
-	routes,
-};
+class CustomBuilder extends Builder<typeof app[`routes`]> {
+	formatHtml(input: string) {
+		return layout(input);
+	}
+}
 
-if (process.argv.includes(`--watch`)) {
-	watchAndServe(options);
+const builder = new CustomBuilder();
+
+if (process.argv.includes(`--serve`)) {
+	await builder.serve({ watch: true });
 } else {
-	await build(options);
+	await builder.build();
 }

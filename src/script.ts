@@ -1,8 +1,5 @@
-import { router } from '@robertakarobin/web/index.ts';
+import { setupForBrowser } from '@robertakarobin/web/index.ts';
 
-import { resolve } from './routes.ts';
+import { app } from './app.ts';
 
-const $output = document.getElementById(`output`)!;
-router.subscribe(async path => {
-	$output.innerHTML = await resolve(path) || ``;
-});
+setupForBrowser(app, document.querySelector(`main`)!);
