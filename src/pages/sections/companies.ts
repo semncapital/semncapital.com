@@ -149,7 +149,7 @@ const companiesByOrder = Object.values(companies)
 	.sort((a, b) => a.year - b.year);
 
 export default () => companiesByOrder.map(company => `
-<li class="portfolioItem">
+<li class="company">
 	<a href="${company.url}">
 		<h3>
 			<img
@@ -158,9 +158,7 @@ export default () => companiesByOrder.map(company => `
 				/>
 		</h3>
 
-		<div>
-			<markdown>${company.description}</markdown>
-		</div>
+		<p${company.description}</p>
 	</a>
 </li>
 `).join(`\n`);

@@ -1,4 +1,5 @@
-import { css, theme } from './styles/shared.ts';
+import { bp, css, theme, vname } from './styles/shared.ts';
+import section from './styles/section.ts';
 
 export default `
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
@@ -13,6 +14,10 @@ export default `
 
 	font-family: ${css.fontFamily};
 	font-size: ${css.fontSize};
+
+	@media ${bp.lessThan} {
+		${vname.marginContentX}: ${css.marginPageX};
+	}
 }
 
 a, button {
@@ -33,12 +38,11 @@ main {
 	padding-top: ${css.navHeight};
 }
 
-.section {
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 60vh;
-	padding: ${css.marginPageY} ${css.marginPageX};
+.company {
+	& img {
+		width: 100px;
+	}
 }
+
+${section}
 `;

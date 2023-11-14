@@ -6,11 +6,21 @@ import contact from './sections/contact.ts';
 import preferences from './sections/preferences.ts';
 
 const template = () => `
-<header class="section">
-	<h1>Southeast Minnesota Capital Fund</h1>
+<section
+	class="section section--hero"
+	style="background-image: url('/assets/images/rochester.jpg')"
+>
+	<header>
+		<h1>
+			<img
+				alt="Southeast Minnesota Capital Fund"
+				src="/assets/images/smcf.svg"
+				/>
+		</h1>
+	</header>
 
 	<p>We are a member-driven angel investment group focused on backing Minnesota entrepreneurs, and dedicated to fostering innovation and economic growth in Rochester and the Greater Southeast Minnesota region.</p>
-</header>
+</section>
 
 <section class="section">
 	<header>

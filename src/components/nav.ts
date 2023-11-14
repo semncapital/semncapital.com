@@ -1,12 +1,15 @@
 import { Component } from '@robertakarobin/web/index.ts';
 
-import { css, val } from '../styles/shared.ts';
+import { bp, css } from '../styles/shared.ts';
 import route from './route.ts';
 
-const nav = `.nav`;
+const root = `.nav`;
 
 const style = `
-${nav} {
+${root} {
+	backdrop-filter: blur(4px);
+	background-color: #FFFFFFE0;
+	box-shadow: 0 0 10px #00000030;
 	height: ${css.navHeight};
 	left: 0;
 	position: fixed;
@@ -15,7 +18,7 @@ ${nav} {
 	z-index: ${css.zNav};
 }
 
-${nav}__logo {
+${root}__logo {
 	display: block;
 	height: 100%;
 	padding: 0 ${css.marginPageX};
@@ -25,7 +28,7 @@ ${nav}__logo {
 	}
 }
 
-${nav}__links {
+${root}__links {
 	transition: right .2s;
 
 	& a {
@@ -38,7 +41,7 @@ ${nav}__links {
 	}
 }
 
-${nav}__toggle {
+${root}__toggle {
 	align-items: center;
 	color: ${css.colorBrand};
 	display: inline-flex;
@@ -51,22 +54,21 @@ ${nav}__toggle {
 	z-index: ${css.zNavToggle};
 }
 
-${nav}__toggle:hover {
+${root}__toggle:hover {
 	color: ${css.colorBrandHigh};
 }
 
-${nav}__toggle--closed {
+${root}__toggle--closed {
 	z-index: calc(${css.zNavToggle} + 1);
 }
 
-@media (max-width: ${val.bpLarge - 1}px) {
-	${nav} {
-		background-color: #FFFFFF;
+@media ${bp.lessThan} {
+	${root} {
 		display: flex;
 		justify-content: space-between;
 	}
 
-	${nav}__links {
+	${root}__links {
 		background-color: #FFFFFF;
 		box-shadow: 0 0 20px 0 #00000020;
 		height: 100vh;
@@ -83,40 +85,37 @@ ${nav}__toggle--closed {
 		}
 	}
 
-	${nav}:not(:focus-within) ${nav}__links {
+	${root}:not(:focus-within) ${root}__links {
 		right: calc(0px - ${css.navWidth});
 	}
 
-	${nav}:focus-within ${nav}__links {
+	${root}:focus-within ${root}__links {
 		right: 0;
 	}
 
-	${nav}__toggle {
+	${root}__toggle {
 		position: fixed;
 		right: 0;
 		top: 0;
 	}
 
-	${nav}__toggle--closed {
+	${root}__toggle--closed {
 		background-color: #FFFFFF;
 		right: calc(0px - ${css.navHeight});
 	}
 
-	${nav}:focus-within + ${nav}__toggle--closed {
+	${root}:focus-within + ${root}__toggle--closed {
 		right: 0;
 	}
 }
 
-@media (min-width: ${val.bpLarge}px) {
-	${nav} {
-		backdrop-filter: blur(4px);
-		background-color: #FFFFFFE0;
-		box-shadow: 0 0 10px #00000030;
+@media ${bp.moreThan} {
+	${root} {
 		display: flex;
 		height: ${css.navHeight};
 	}
 
-	${nav}__links {
+	${root}__links {
 		--link-paddingX: calc(${css.marginPageX} / 2);
 
 		display: flex;
@@ -130,7 +129,7 @@ ${nav}__toggle--closed {
 		}
 	}
 
-	${nav}__toggle {
+	${root}__toggle {
 		display: none;
 	}
 }
