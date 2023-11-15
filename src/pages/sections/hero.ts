@@ -7,10 +7,6 @@ const pfx = `home`;
 
 const style = `
 .${pfx} {
-	font-size: 1.9rem;
-	font-weight: 100;
-	line-height: 1.5em;
-
 	@media ${bp.lessThan} {
 		background-color: #FFFFFF;
 		padding: ${css.marginContentY} ${css.marginContentX};
@@ -70,7 +66,7 @@ const template = () => `
 	</header>
 
 	<div class="${pfx}__body">
-		<p>The <strong>Southeast Minnesota Capital Fund</strong> is a member-driven angel investment group focused on backing Minnesota entrepreneurs, and dedicated to fostering innovation and economic growth in Rochester and Greater Southeast Minnesota.</p>
+		<p class="text-h2">The <strong>Southeast Minnesota Capital Fund</strong> is a member-driven angel investment group focused on backing Minnesota entrepreneurs, and dedicated to fostering innovation and economic growth in Rochester and Greater Southeast Minnesota.</p>
 
 		<p>
 			${route(`contact`, `Get in touch`, { class: `button` })}

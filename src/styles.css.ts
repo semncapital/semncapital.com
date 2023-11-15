@@ -1,4 +1,10 @@
-import { bp, css, theme, vname } from './styles/shared.ts';
+import {
+	bp,
+	css,
+	fontClasses,
+	theme,
+	vname,
+} from './styles/shared.ts';
 
 export default `
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
@@ -18,6 +24,8 @@ export default `
 		${vname.marginContentX}: ${css.marginPageX};
 	}
 }
+
+${fontClasses}
 
 body {
 	background-color: ${css.colorBg};
@@ -67,12 +75,6 @@ p + p {
 	&:hover {
 		background-color: ${css.colorBrandHigh};
 		color: #FFFFFF;
-	}
-}
-
-.company {
-	& img {
-		width: 100px;
 	}
 }
 `;

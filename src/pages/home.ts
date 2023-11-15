@@ -10,15 +10,7 @@ const template = () => `
 
 ${hero()}
 
-<section class="section">
-	<header>
-		<h2>Portfolio Companies</h2>
-
-		<p>These are the companies SE MN Capital Fund has invested in.</p>
-	</header>
-
-	${companies()}
-</section>
+${companies()}
 
 <section class="section">
 	<header>

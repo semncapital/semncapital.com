@@ -1,3 +1,7 @@
+import { Component } from '@robertakarobin/web/index.ts';
+
+import { bp, css } from '../../styles/shared.ts';
+
 const company = (
 	title: string,
 	year: number,
@@ -148,21 +152,106 @@ const companiesByOrder = Object.values(companies)
 	.filter(company => !(company.isExited))
 	.sort((a, b) => a.year - b.year);
 
-export default () => `
-<ul>
-	${companiesByOrder.map(company => `
-		<li class="company">
-			<a href="${company.url}">
-				<h3>
-					<img
-						alt="${company.title}"
-						src="/assets/images/${company.logo}"
-						/>
-				</h3>
+const pfx = `companies`;
 
-				<p>${company.description}</p>
-			</a>
-		</li>
-	`).join(`\n`)}
-</ul>`
-;
+const style = `
+.${pfx} {
+	& header {
+		padding: ${css.marginContentY} ${css.marginContentX};
+		text-align: center;
+	}
+
+	& .${pfx}__grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		& > li {
+			display: contents;
+		}
+	}
+
+	& .${pfx}__company {
+		--padding: 10px;
+
+		align-items: center;
+		background-color: transparent;
+		box-sizing: border-box;
+		color: #00000070;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 0;
+		flex-shrink: 0;
+		mix-blend-mode: multply;
+		padding: var(--padding);
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		transition: background-color .2s, color .2s;
+
+		@media ${bp.lessThan} {
+			width: calc(100% / 3);
+		}
+
+		@media ${bp.moreThan} {
+			width: calc(100% / 6);
+		}
+
+		&:hover {
+			background-color: #FFFFFF;
+			color: ${css.colorBrand};
+		}
+
+		& img {
+			height: 100px;
+			margin-top: 10px;
+			mix-blend-mode: multiply;
+			object-fit: contain;
+			object-position: center;
+			width: 100%;
+		}
+
+		& p {
+			box-sizing: border-box;
+			padding: 20px 10px 50px 10px;
+			width: 100%;
+		}
+	}
+}
+`;
+
+const template = () => `
+<section class="${pfx}">
+	<header>
+		<h2 class="text-h1">Our portfolio</h2>
+	</header>
+
+	<ul class="${pfx}__grid">
+		${companiesByOrder.map(company => `
+			<li>
+				<a
+					class="${pfx}__company"
+					href="${company.url}"
+					rel="noopener"
+					>
+					<h3>
+						<img
+							alt="${company.title}"
+							src="/assets/images/${company.logo}"
+							/>
+					</h3>
+
+					<p>${company.description}</p>
+				</a>
+			</li>
+		`).join(`\n`)}
+	</ul>
+</section>
+`;
+
+export class CompaniesComponent extends Component {
+	style = style;
+	template = template;
+}
+
+export default CompaniesComponent.toFunction(CompaniesComponent);

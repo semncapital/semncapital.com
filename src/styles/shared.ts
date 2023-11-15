@@ -1,7 +1,7 @@
 import { CssTheme } from '@robertakarobin/web/styles/lib.css.ts';
 
 export const bps = {
-	bp: 1000,
+	bp: 1100,
 } as const;
 
 export const constants = {
@@ -20,6 +20,39 @@ export const constants = {
 	zNav: 100,
 	zNavToggle: 110,
 } as const;
+
+const fonts = fontsFrom({
+	h1: `
+		font-size: 3rem;
+		font-weight: 100;
+		line-height: 1.5em;
+	`,
+
+	h2: `
+		font-size: 2rem;
+		font-weight: 100;
+		line-height: 1.5em;
+	`,
+});
+
+function fontsFrom<
+	Fonts extends Record<string, string>
+>(fontsByName: Fonts) {
+	const out = {} as Record<string, string>;
+	for (const fontName in fontsByName) {
+		out[fontName] = `
+			${fontsByName[fontName]}
+			--fontFace: '${fontName}';
+		`;
+	}
+	return out as Fonts;
+}
+
+export const fontClasses = Object.keys(fonts).map(fontName => `
+.text-${fontName} {
+	${fonts[fontName as keyof typeof fonts]}
+}
+`).join(`\n`);
 
 export const theme = new CssTheme(constants);
 
