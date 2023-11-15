@@ -1,7 +1,7 @@
 import { Component } from '@robertakarobin/web/index.ts';
 
-import { bp, css } from '../styles/shared.ts';
-import route from './route.ts';
+import { bp, css } from '../../styles/shared.ts';
+import route from '../../components/route.ts';
 
 const root = `.nav`;
 
@@ -158,6 +158,11 @@ const template = () => `
 		<li>${route(`contact`, `Contact`)}</li>
 	</ul>
 </nav>
+
+<button
+	aria-label="Close sidebar"
+	class="nav__toggle nav__toggle--closed"
+>&times;</button>
 `;
 
 export class NavComponent extends Component {

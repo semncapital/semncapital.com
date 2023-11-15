@@ -1,6 +1,7 @@
 import { Component, Page } from '@robertakarobin/web/index.ts';
 
-import nav from '../components/nav.ts';
+import footer from './sections/footer.ts';
+import nav from './sections/nav.ts';
 
 export default (contents: string) => `
 <!DOCTYPE html>
@@ -17,19 +18,9 @@ export default (contents: string) => `
 	<body>
 		${nav()}
 
-		<button
-			aria-label="Close sidebar"
-			class="nav__toggle nav__toggle--closed"
-		>&times;</button>
-
 		<main id="output">${contents}</main>
 
-		<footer>
-			<h2>Southeast Minnesota Capital Fund</h2>
-
-			<address>221 1st Avenue SW. Suite 202<br />
-			Rochester, MN 55902</address>
-		</footer>
+		${footer()}
 	</body>
 </html>
 `;

@@ -19,6 +19,7 @@ export default `
 
 	font-family: ${css.fontFamily};
 	font-size: ${css.fontSize};
+	line-height: 1.5em;
 
 	@media ${bp.lessThan} {
 		${vname.marginContentX}: ${css.marginPageX};

@@ -14,13 +14,7 @@ ${companies()}
 
 ${preferences()}
 
-<section class="section">
-	<header>
-		<h2>Contact</h2>
-	</header>
-
-	${contact()}
-</section>
+${contact()}
 `;
 
 export class HomePage extends Page {

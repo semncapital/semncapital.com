@@ -192,7 +192,7 @@ const style = `
 		transition: background-color .2s, color .2s;
 
 		@media ${bp.lessThan} {
-			width: calc(100% / 3);
+			width: calc(100% / 2);
 		}
 
 		@media ${bp.moreThan} {

@@ -6,9 +6,10 @@ export const bps = {
 
 export const constants = {
 	...bps,
-	colorBg: `#fffbf9`,
+	colorBg: `#f9f7ff`,
 	colorBrand: `#3366cc`,
 	colorBrandHigh: `#6699ff`,
+	colorBrandLow: `#142952`,
 	fontFamily: `'Open Sans', Helvetica`,
 	fontSize: `16px`,
 	marginContentX: `100px`,
@@ -21,7 +22,7 @@ export const constants = {
 	zNavToggle: 110,
 } as const;
 
-const fonts = fontsFrom({
+export const fonts = fontsFrom({
 	h1: `
 		font-size: 3rem;
 		font-weight: 100;
@@ -31,6 +32,12 @@ const fonts = fontsFrom({
 	h2: `
 		font-size: 2rem;
 		font-weight: 100;
+		line-height: 1.5em;
+	`,
+
+	h3: `
+		font-size: 1.5rem;
+		font-weight: 400;
 		line-height: 1.5em;
 	`,
 });
