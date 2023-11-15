@@ -1,6 +1,6 @@
 import { Page } from '@robertakarobin/web/index.ts';
 
-import about from './sections/about.ts';
+// import about from './sections/about.ts';
 import companies from './sections/companies.ts';
 import contact from './sections/contact.ts';
 import hero from './sections/hero.ts';
@@ -12,21 +12,7 @@ ${hero()}
 
 ${companies()}
 
-<section class="section">
-	<header>
-		<h2>About</h2>
-	</header>
-
-	${about()}
-</section>
-
-<section class="section">
-	<header>
-		<h2>Investment Preferences</h2>
-	</header>
-
-	${preferences()}
-</section>
+${preferences()}
 
 <section class="section">
 	<header>

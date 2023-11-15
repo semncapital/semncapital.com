@@ -45,16 +45,16 @@ a:hover {
 	color: ${css.colorBrandHigh};
 }
 
-strong {
-	font-weight: bold;
-}
-
 main {
 	padding-top: ${css.navHeight};
 }
 
 p + p {
 	margin-top: 1em;
+}
+
+strong {
+	font-weight: bold;
 }
 
 .button {

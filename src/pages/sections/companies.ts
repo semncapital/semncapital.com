@@ -156,6 +156,8 @@ const pfx = `companies`;
 
 const style = `
 .${pfx} {
+	margin: ${css.marginContentY} auto;
+
 	& header {
 		padding: ${css.marginContentY} ${css.marginContentX};
 		text-align: center;
