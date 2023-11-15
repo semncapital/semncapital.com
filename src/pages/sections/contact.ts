@@ -39,7 +39,7 @@ good fit for us, please send a short description of your company and/or a short 
 </markdown>`;
 
 const template = () => `
-<section class="${pfx}">
+<section class="${pfx}" id="contact/">
 	<header>
 		<h2 class="text-h1">Contact</h2>
 	</header>

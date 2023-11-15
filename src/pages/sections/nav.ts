@@ -152,7 +152,6 @@ const template = () => `
 	>☰</button>
 
 	<ul class="nav__links">
-		<li>${route(`home`, `About`)}</li>
 		<li>${route(`preferences`, `Investment Preferences`)}</li>
 		<li>${route(`portfolio`, `Portfolio`)}</li>
 		<li>${route(`contact`, `Contact`)}</li>

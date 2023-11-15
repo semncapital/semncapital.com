@@ -84,7 +84,7 @@ const style = `
 `;
 
 const template = () => `
-<section class="${pfx}">
+<section class="${pfx}" id="preferences/">
 	<header>
 		<h2 class="text-h1">Investment Preferences</h2>
 	</header>

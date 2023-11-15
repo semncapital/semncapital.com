@@ -223,7 +223,7 @@ const style = `
 `;
 
 const template = () => `
-<section class="${pfx}">
+<section class="${pfx}" id="portfolio/">
 	<header>
 		<h2 class="text-h1">Our portfolio</h2>
 	</header>
