@@ -8,10 +8,12 @@ const root = `.nav`;
 const style = `
 ${root} {
 	backdrop-filter: blur(4px);
-	background-color: #FFFFFFE0;
-	box-shadow: 0 0 10px #00000030;
+	background-color: ${css.colorBg};
+	box-shadow: 0 0 10px #00000020;
+	box-sizing: border-box;
 	height: ${css.navHeight};
 	left: 0;
+	padding: 0 ${css.marginContentX};
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -21,7 +23,6 @@ ${root} {
 ${root}__logo {
 	display: block;
 	height: 100%;
-	padding: 0 ${css.marginPageX};
 
 	& img {
 		height: 100%;
@@ -111,18 +112,19 @@ ${root}__toggle--closed {
 
 @media ${bp.moreThan} {
 	${root} {
+		box-sizing: border-box;
 		display: flex;
 		height: ${css.navHeight};
+		padding: 0 ${css.marginContentX};
 	}
 
 	${root}__links {
 		--link-paddingX: calc(${css.marginPageX} / 2);
 
 		display: flex;
-		flex-direction: flex-end;
 		flex-grow: 1;
 		justify-content: flex-end;
-		margin-right: var(--link-paddingX);
+		margin-left: var(--link-paddingX);
 
 		& a {
 			padding: 0 var(--link-paddingX);

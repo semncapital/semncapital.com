@@ -35,13 +35,17 @@ const preferencesByOrder = [
 	preferences.entrepreneurs,
 ];
 
-export default () => preferencesByOrder.map(preference => `
-<li class="investPref">
-	<h3>
-		<span class="fa fa-solid ${preference.logo}"></span>
-		${preference.title}
-	</h3>
+export default () => `
+<ul>
+	${preferencesByOrder.map(preference => `
+		<li class="investPref">
+			<h3>
+				<span class="fa fa-solid ${preference.logo}"></span>
+				${preference.title}
+			</h3>
 
-	<p>${preference.description}</p>
-</li>
-`).join(`\n`);
+			<p>${preference.description}</p>
+		</li>
+		`).join(`\n`)
+	}
+</ul>`;

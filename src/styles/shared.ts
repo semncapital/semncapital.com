@@ -1,11 +1,12 @@
 import { CssTheme } from '@robertakarobin/web/styles/lib.css.ts';
 
 export const bps = {
-	bp: 800,
+	bp: 1000,
 } as const;
 
 export const constants = {
 	...bps,
+	colorBg: `#fffbf9`,
 	colorBrand: `#3366cc`,
 	colorBrandHigh: `#6699ff`,
 	fontFamily: `'Open Sans', Helvetica`,

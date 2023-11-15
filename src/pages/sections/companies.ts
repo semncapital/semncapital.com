@@ -148,17 +148,21 @@ const companiesByOrder = Object.values(companies)
 	.filter(company => !(company.isExited))
 	.sort((a, b) => a.year - b.year);
 
-export default () => companiesByOrder.map(company => `
-<li class="company">
-	<a href="${company.url}">
-		<h3>
-			<img
-				alt="${company.title}"
-				src="/assets/images/${company.logo}"
-				/>
-		</h3>
+export default () => `
+<ul>
+	${companiesByOrder.map(company => `
+		<li class="company">
+			<a href="${company.url}">
+				<h3>
+					<img
+						alt="${company.title}"
+						src="/assets/images/${company.logo}"
+						/>
+				</h3>
 
-		<p${company.description}</p>
-	</a>
-</li>
-`).join(`\n`);
+				<p>${company.description}</p>
+			</a>
+		</li>
+	`).join(`\n`)}
+</ul>`
+;

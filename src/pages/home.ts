@@ -3,44 +3,12 @@ import { Page } from '@robertakarobin/web/index.ts';
 import about from './sections/about.ts';
 import companies from './sections/companies.ts';
 import contact from './sections/contact.ts';
+import hero from './sections/hero.ts';
 import preferences from './sections/preferences.ts';
 
 const template = () => `
-<section
-	class="section section--hero"
-	style="background-image: url('/assets/images/rochester.jpg')"
->
-	<header>
-		<h1>
-			<img
-				alt="Southeast Minnesota Capital Fund"
-				src="/assets/images/smcf.svg"
-				/>
-		</h1>
-	</header>
 
-	<p>We are a member-driven angel investment group focused on backing Minnesota entrepreneurs, and dedicated to fostering innovation and economic growth in Rochester and the Greater Southeast Minnesota region.</p>
-</section>
-
-<section class="section">
-	<header>
-		<h2>About</h2>
-	</header>
-
-	<ul>
-		${about()}
-	</ul>
-</section>
-
-<section class="section">
-	<header>
-		<h2>Investment Preferences</h2>
-	</header>
-
-	<ul>
-		${preferences()}
-	</ul>
-</section>
+${hero()}
 
 <section class="section">
 	<header>
@@ -49,9 +17,23 @@ const template = () => `
 		<p>These are the companies SE MN Capital Fund has invested in.</p>
 	</header>
 
-	<ul>
-		${companies()}
-	</ul>
+	${companies()}
+</section>
+
+<section class="section">
+	<header>
+		<h2>About</h2>
+	</header>
+
+	${about()}
+</section>
+
+<section class="section">
+	<header>
+		<h2>Investment Preferences</h2>
+	</header>
+
+	${preferences()}
 </section>
 
 <section class="section">
