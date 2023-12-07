@@ -1,8 +1,11 @@
 {
 	"dependencies": {
-		"@robertakarobin/eslint-config-ts": "^0.0.5",
-		"@robertakarobin/web": "^0.0.21",
-		"tsx": "^4.1.2"
+		"@robertakarobin/csslint": "^0.0.8",
+		"@robertakarobin/eslint-config-ts": "^0.0.21",
+		"@robertakarobin/htmlvalidate": "^0.0.3",
+		"@robertakarobin/util": "^0.0.196",
+		"@robertakarobin/web": "^0.0.42",
+		"tsx": "^4.6.2"
 	},
 	"name": "semncapital.com",
 	"scripts": {
