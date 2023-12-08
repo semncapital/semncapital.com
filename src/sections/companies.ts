@@ -1,6 +1,7 @@
-import { Component } from '@robertakarobin/web/index.ts';
+import { Component } from '@robertakarobin/web/component.ts';
 
-import { bp, css } from '../../styles/shared.ts';
+import { bp, theme, vars } from '@src/theme.ts';
+import { routes } from '@src/router.ts';
 
 const company = (
 	title: string,
@@ -152,18 +153,16 @@ const companiesByOrder = Object.values(companies)
 	.filter(company => !(company.isExited))
 	.sort((a, b) => a.year - b.year);
 
-const pfx = `companies`;
-
 const style = `
-.${pfx} {
-	margin: ${css.marginContentY} auto;
+:host {
+	margin: ${vars.marginContentY} auto;
 
 	& header {
-		padding: ${css.marginContentY} ${css.marginContentX};
+		padding: ${vars.marginContentY} ${vars.marginContentX};
 		text-align: center;
 	}
 
-	& .${pfx}__grid {
+	& ._grid {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -173,7 +172,7 @@ const style = `
 		}
 	}
 
-	& .${pfx}__company {
+	& ._company {
 		--padding: 10px;
 
 		align-items: center;
@@ -191,17 +190,17 @@ const style = `
 		text-decoration: none;
 		transition: background-color .2s, color .2s;
 
-		@media ${bp.lessThan} {
+		@media ${bp.lessThan.tablet} {
 			width: calc(100% / 2);
 		}
 
-		@media ${bp.moreThan} {
+		@media ${bp.moreThan.tablet} {
 			width: calc(100% / 6);
 		}
 
 		&:hover {
 			background-color: #FFFFFF;
-			color: ${css.colorBrand};
+			color: ${vars.colorBrand};
 		}
 
 		& img {
@@ -223,16 +222,16 @@ const style = `
 `;
 
 const template = () => `
-<section class="${pfx}" id="portfolio/">
+<section id="${routes.portfolio.idAttr}">
 	<header>
-		<h2 class="text-h1">Our portfolio</h2>
+		<h2 class="${theme.typeClassNames.h1}">Our portfolio</h2>
 	</header>
 
-	<ul class="${pfx}__grid">
+	<ul class="_grid">
 		${companiesByOrder.map(company => `
 			<li>
 				<a
-					class="${pfx}__company"
+					class="_company"
 					href="${company.url}"
 					rel="noopener"
 					>
@@ -252,8 +251,11 @@ const template = () => `
 `;
 
 export class CompaniesComponent extends Component {
-	style = style;
+	static style = style;
+
+	static {
+		this.init();
+	}
+
 	template = template;
 }
-
-export default CompaniesComponent.toFunction(CompaniesComponent);

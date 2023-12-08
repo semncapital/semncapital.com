@@ -1,6 +1,7 @@
-import { Component } from '@robertakarobin/web/index.ts';
+import { Component } from '@robertakarobin/web/component.ts';
 
-import { bp, css } from '../../styles/shared.ts';
+import { bp, theme, vars } from '@src/theme.ts';
+import { routes } from '@src/router.ts';
 
 const preference = (title: string, logo: string, description: string) => ({
 	description,
@@ -39,30 +40,28 @@ const preferencesByOrder = [
 	preferences.entrepreneurs,
 ];
 
-const pfx = `preferences`;
-
 const style = `
-.${pfx} {
+:host {
 	background-color: #FFFFFF;
-	padding: ${css.marginContentY} ${css.marginContentX};
+	padding: ${vars.marginContentY} ${vars.marginContentX};
 
 	& header {
-		margin: ${css.marginContentY} ${css.marginContentX};
+		margin: ${vars.marginContentY} ${vars.marginContentX};
 		text-align: center;
 	}
 
-	& .${pfx}__body {
+	& ._body {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
 
-	& .${pfx}__pref {
+	& ._pref {
 		box-sizing: border-box;
 		padding: 20px;
 		text-align: center;
 
-		@media ${bp.moreThan} {
+		@media ${bp.moreThan.tablet} {
 			width: 50%;
 		}
 
@@ -84,15 +83,15 @@ const style = `
 `;
 
 const template = () => `
-<section class="${pfx}" id="preferences/">
+<section id="${routes.preferences.idAttr}">
 	<header>
-		<h2 class="text-h1">Investment Preferences</h2>
+		<h2 class="${theme.typeClassNames.h1}">Investment Preferences</h2>
 	</header>
 
-	<ul class="${pfx}__body">
+	<ul class="_body">
 		${preferencesByOrder.map(preference => `
-			<li class="${pfx}__pref">
-				<h3 class="text-h2">
+			<li class="_pref">
+				<h3 class="${theme.typeClassNames.h2}">
 					${preference.logo}
 					${preference.title}
 				</h3>
@@ -106,8 +105,9 @@ const template = () => `
 `;
 
 export class PreferencesComponent extends Component {
-	style = style;
+	static style = style;
+	static {
+		this.init();
+	}
 	template = template;
 }
-
-export default PreferencesComponent.toFunction(PreferencesComponent);

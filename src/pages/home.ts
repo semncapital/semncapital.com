@@ -1,26 +1,32 @@
-import { Page } from '@robertakarobin/web/index.ts';
+import { Page } from '@robertakarobin/web/component.ts';
 
 // import about from './sections/about.ts';
-import companies from './sections/companies.ts';
-import contact from './sections/contact.ts';
-import hero from './sections/hero.ts';
-import preferences from './sections/preferences.ts';
+import { FooterComponent } from '@src/sections/footer.ts';
+import { NavComponent } from '@src/sections/nav.ts';
+
+import { CompaniesComponent } from '@src/sections/companies.ts';
+import { ContactComponent } from '@src/sections/contact.ts';
+import { HomeHero } from '@src/sections/hero.ts';
+import { PreferencesComponent } from '@src/sections/preferences.ts';
 
 const template = () => `
+<body>
+	${new NavComponent().render()}
 
-${hero()}
+	<main>
+		${new HomeHero().render()}
 
-${companies()}
+		${new CompaniesComponent().render()}
 
-${preferences()}
+		${new PreferencesComponent().render()}
 
-${contact()}
+		${new ContactComponent().render()}
+	</main>
+
+	${new FooterComponent().render()}
+</body>
 `;
 
 export class HomePage extends Page {
-	importMetaUrl = import.meta.url;
 	template = template;
-	title = ``;
 }
-
-export default HomePage.toFunction(HomePage);

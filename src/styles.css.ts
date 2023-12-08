@@ -1,35 +1,36 @@
 import {
 	bp,
-	css,
-	fontClasses,
+	reset,
 	theme,
+	val,
+	vars,
 	vname,
-} from './styles/shared.ts';
+} from './theme.ts';
 
 export default `
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 @import url("/assets/css/fontawesome.min.css");
 
-* {
-	${theme.reset}
-}
-
 :root {
-	${theme.setCssVals()}
+	${theme.varsDeclarations}
 
-	font-family: ${css.fontFamily};
-	font-size: ${css.fontSize};
+	font-family: ${vars.fontFamily};
+	font-size: ${vars.fontSize};
 	line-height: 1.5em;
 
-	@media ${bp.lessThan} {
-		${vname.marginContentX}: ${css.marginPageX};
+	@media ${bp.lessThan.tablet} {
+		${vname.marginContentX}: ${val.marginPageX};
 	}
 }
 
-${fontClasses}
+* {
+	${reset}
+}
+
+${theme.typeClasses}
 
 body {
-	background-color: ${css.colorBg};
+	background-color: ${vars.colorBg};
 }
 
 a, button {
@@ -37,17 +38,17 @@ a, button {
 }
 
 a {
-	color: ${css.colorBrand};
+	color: ${vars.colorBrand};
 	text-decoration: underline;
 	transition: color .2s;
 }
 
 a:hover {
-	color: ${css.colorBrandHigh};
+	color: ${vars.colorBrandHigh};
 }
 
 main {
-	padding-top: ${css.navHeight};
+	padding-top: ${vars.navHeight};
 }
 
 p + p {
@@ -60,7 +61,7 @@ strong {
 
 .button {
 	align-items: center;
-	background-color: ${css.colorBrand};
+	background-color: ${vars.colorBrand};
 	border-radius: 4px;
 	color: #FFFFFF;
 	display: inline-flex;
@@ -74,7 +75,7 @@ strong {
 	transition: background-color .2s;
 
 	&:hover {
-		background-color: ${css.colorBrandHigh};
+		background-color: ${vars.colorBrandHigh};
 		color: #FFFFFF;
 	}
 }
