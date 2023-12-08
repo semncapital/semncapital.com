@@ -188,7 +188,7 @@ const style = `
 		position: relative;
 		text-align: center;
 		text-decoration: none;
-		transition: background-color .2s, color .2s;
+		transition: background-color 0.2s, color 0.2s;
 
 		@media ${bp.lessThan.tablet} {
 			width: calc(100% / 2);
@@ -199,7 +199,7 @@ const style = `
 		}
 
 		&:hover {
-			background-color: #FFFFFF;
+			background-color: #ffffff;
 			color: ${vars.colorBrand};
 		}
 

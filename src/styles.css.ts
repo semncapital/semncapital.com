@@ -9,7 +9,7 @@ import {
 
 export default `
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
-@import url("/assets/css/fontawesome.min.css");
+@import url('/assets/css/fontawesome.min.css');
 
 :root {
 	${theme.varsDeclarations}
@@ -40,7 +40,7 @@ a, button {
 a {
 	color: ${vars.colorBrand};
 	text-decoration: underline;
-	transition: color .2s;
+	transition: color 0.2s;
 }
 
 a:hover {
@@ -63,20 +63,20 @@ strong {
 	align-items: center;
 	background-color: ${vars.colorBrand};
 	border-radius: 4px;
-	color: #FFFFFF;
+	color: #ffffff;
 	display: inline-flex;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.2rem;
-	padding: .66em 2em;
+	padding: 0.66em 2em;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
-	transition: background-color .2s;
+	transition: background-color 0.2s;
 
 	&:hover {
 		background-color: ${vars.colorBrandHigh};
-		color: #FFFFFF;
+		color: #ffffff;
 	}
 }
 `;

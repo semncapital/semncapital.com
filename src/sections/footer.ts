@@ -5,12 +5,12 @@ import { theme, vars } from '@src/theme.ts';
 const style = `
 :host {
 	background-color: ${vars.colorBrandLow};
-	color: #FFFFFF;
+	color: #ffffff;
 	padding: calc(2 * ${vars.marginContentY}) ${vars.marginContentX};
 	text-align: center;
 
 	& a {
-		color: #FFFFFF;
+		color: #ffffff;
 	}
 }
 `;

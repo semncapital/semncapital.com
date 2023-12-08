@@ -27,7 +27,7 @@ const style = `
 	}
 
 	& ._links {
-		transition: right .2s;
+		transition: right 0.2s;
 
 		& a {
 			align-items: center;
@@ -47,7 +47,7 @@ const style = `
 		font-size: 30px;
 		justify-content: center;
 		text-decoration: none;
-		transition: color .2s, right .2s;
+		transition: color 0.2s, right 0.2s;
 		width: ${vars.navHeight};
 		z-index: ${vars.zNavToggle};
 
@@ -65,7 +65,7 @@ const style = `
 		justify-content: space-between;
 
 		& ._links {
-			background-color: #FFFFFF;
+			background-color: #ffffff;
 			box-shadow: 0 0 20px 0 #00000020;
 			height: 100vh;
 			padding-top: ${vars.navHeight};
@@ -96,7 +96,7 @@ const style = `
 		}
 
 		& ._toggle-closed {
-			background-color: #FFFFFF;
+			background-color: #ffffff;
 			right: calc(0px - ${vars.navHeight});
 		}
 
@@ -143,6 +143,7 @@ const template = () => `
 	<button
 		aria-label="Open sidebar"
 		class="_toggle"
+		type="button"
 	>☰</button>
 
 	<ul class="_links">

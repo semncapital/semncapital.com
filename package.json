@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"@robertakarobin/csslint": "^0.0.8",
+		"@robertakarobin/csslint": "^0.0.10",
 		"@robertakarobin/eslint-config-ts": "^0.0.21",
 		"@robertakarobin/htmlvalidate": "^0.0.3",
 		"@robertakarobin/util": "^0.0.196",
@@ -10,7 +10,11 @@
 	"name": "semncapital.com",
 	"scripts": {
 		"build": "tsx ./build.ts",
-		"dev": "tsx watch --watch-preserve-output --watch-path=src build.ts -- --serve"
+		"dev": "tsx watch --watch-preserve-output --watch-path=src build.ts -- --serve",
+		"lint": "npm run lint:ts && npm run lint:css && npm run lint:html",
+		"lint:css": "stylelint dist/**/*.css",
+		"lint:html": "html-validate dist",
+		"lint:ts": "eslint ."
 	},
 	"type": "module",
 	"version": "0.0.1"

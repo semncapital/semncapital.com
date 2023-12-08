@@ -6,7 +6,7 @@ import { Link } from '@src/router.ts';
 const style = `
 :host {
 	@media ${bp.lessThan.tablet} {
-		background-color: #FFFFFF;
+		background-color: #ffffff;
 		padding: ${vars.marginContentY} ${vars.marginContentX};
 		text-align: center;
 
@@ -29,7 +29,7 @@ const style = `
 		& ._body {
 			--cloudOverlap: ${vars.marginContentX};
 
-			background-color: #FFFFFFF0;
+			background-color: #fffffff0;
 			border: 0 solid #00000030;
 			border-radius: var(--cloudOverlap) 0 0 var(--cloudOverlap);
 			border-width: 1px 0 1px 1px;

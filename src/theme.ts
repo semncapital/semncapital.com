@@ -10,7 +10,7 @@ export const constants = {
 	colorBrand: `#3366cc`,
 	colorBrandHigh: `#6699ff`,
 	colorBrandLow: `#142952`,
-	fontFamily: `'Open Sans', Helvetica`,
+	fontFamily: `'Open Sans', 'Helvetica'`,
 	fontSize: `16px`,
 	marginContentX: `100px`,
 	marginContentY: `3rem`,

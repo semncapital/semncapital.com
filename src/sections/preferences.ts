@@ -42,7 +42,7 @@ const preferencesByOrder = [
 
 const style = `
 :host {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	padding: ${vars.marginContentY} ${vars.marginContentX};
 
 	& header {
