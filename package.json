@@ -1,10 +1,10 @@
 {
 	"dependencies": {
-		"@robertakarobin/csslint": "^0.0.10",
+		"@robertakarobin/csslint": "^0.0.11",
 		"@robertakarobin/eslint-config-ts": "^0.0.21",
 		"@robertakarobin/htmlvalidate": "^0.0.3",
-		"@robertakarobin/util": "^0.0.196",
-		"@robertakarobin/web": "^0.0.43",
+		"@robertakarobin/util": "^0.0.198",
+		"@robertakarobin/web": "^0.0.44",
 		"tsx": "^4.6.2"
 	},
 	"name": "semncapital.com",
@@ -14,7 +14,7 @@
 		"lint": "npm run lint:ts && npm run lint:css && npm run lint:html",
 		"lint:css": "stylelint dist/**/*.css",
 		"lint:html": "html-validate dist",
-		"lint:ts": "eslint ."
+		"lint:ts": "tsc && eslint ."
 	},
 	"type": "module",
 	"version": "0.0.1"
