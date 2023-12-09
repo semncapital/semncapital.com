@@ -177,13 +177,14 @@ const style = `
 
 		align-items: center;
 		background-color: transparent;
+		border: 0 solid #00000020;
+		border-bottom-width: 1px;
 		box-sizing: border-box;
-		color: #00000070;
+		color: #000000;
 		display: flex;
 		flex-direction: column;
 		flex-grow: 0;
 		flex-shrink: 0;
-		mix-blend-mode: multply;
 		padding: var(--padding);
 		position: relative;
 		text-align: center;
@@ -195,7 +196,7 @@ const style = `
 		}
 
 		@media ${bp.moreThan.tablet} {
-			width: calc(100% / 6);
+			width: calc(100% / 3);
 		}
 
 		&:hover {
@@ -204,8 +205,7 @@ const style = `
 		}
 
 		& img {
-			height: 100px;
-			margin-top: 10px;
+			height: 150px;
 			mix-blend-mode: multiply;
 			object-fit: contain;
 			object-position: center;
@@ -214,7 +214,7 @@ const style = `
 
 		& p {
 			box-sizing: border-box;
-			padding: 20px 10px 50px 10px;
+			padding: 20px 10px;
 			width: 100%;
 		}
 	}
