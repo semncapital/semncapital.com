@@ -3,7 +3,11 @@ import { Component } from '@robertakarobin/web/component.ts';
 import { bp, theme, vars } from '@src/theme.ts';
 import { routes } from '@src/router.ts';
 
-const preference = (title: string, logo: string, description: string) => ({
+const preference = (
+	title: string,
+	logo: string,
+	description: string,
+) => ({
 	description,
 	logo,
 	title,
@@ -13,13 +17,13 @@ const preferences = {
 	early: preference(
 		`Seed and early stage`,
 		`<span class="fa fa-solid fa-flask"></span>`,
-		`We invest in seed and early stage rounds where equity capital is most scarce and opportunities for substantial gains are highest.`
+		`We invest in seed and early stage rounds where equity capital is most scarce and opportunities for substantial gains are highest.`,
 	),
 	entrepreneurs: preference(
 		`Great entrepreneurs and founders`,
 		`<span class="fa fa-solid fa-users"></span>`,
 		`Above all, we back visionary founders and great teams. Strong leadership is the one common ingredient
-		among our most successful portfolio companies`
+		among our most successful portfolio companies`,
 	),
 	innovation: preference(
 		`Innovation`,
@@ -29,7 +33,7 @@ const preferences = {
 	mn: preference(
 		`Minnesota companies`,
 		`<img src="/assets/images/smcf-mn.svg" alt="MN state" />`,
-		`We favor Minnesota-based companies, but preferably ones located in Southeast Minnesota or with a nexus to Mayo Clinic.`
+		`We favor Minnesota-based companies, but preferably ones located in Southeast Minnesota or with a nexus to Mayo Clinic.`,
 	),
 };
 
@@ -78,6 +82,17 @@ const style = `
 		& p {
 			margin-top: 20px;
 		}
+
+		&:nth-child(3n + 1) {
+			color: #000044;
+		}
+		&:nth-child(3n + 2) {
+			color: #004400;
+		}
+		&:nth-child(3n + 3) {
+			color: #440000;
+		}
+
 	}
 }
 `;
