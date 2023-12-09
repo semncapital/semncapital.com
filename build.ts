@@ -13,7 +13,7 @@ class CustomBuilder extends Builder {
 	formatHtml(input: Parameters<Builder[`formatHtml`]>[0]) {
 		return super.formatHtml({
 			...input,
-			meta: `<meta name="description" content="The Southeast Minnesota Capital Fund provides early-stage investment capital to Minnesota entrepreneurs building innovative, high growth companies. We invest across the state, with a preference for companies located in or connected to Rochester and SE Minnesota.">`,
+			head: `<meta name="description" content="The Southeast Minnesota Capital Fund provides early-stage investment capital to Minnesota entrepreneurs building innovative, high growth companies. We invest across the state, with a preference for companies located in or connected to Rochester and SE Minnesota.">`,
 		});
 	}
 }
