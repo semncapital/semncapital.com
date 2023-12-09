@@ -7,6 +7,7 @@ const style = `
 :host {
 	@media ${bp.lessThan.tablet} {
 		background-color: #ffffff;
+		background-image: none !important;
 		padding: ${vars.marginContentY} ${vars.marginContentX};
 		text-align: center;
 
@@ -17,11 +18,12 @@ const style = `
 
 	@media ${bp.moreThan.tablet} {
 		align-items: center;
-		background-image:url('/assets/images/rochester.jpg');
 		background-position: center right;
 		background-repeat: no-repeat;
 		background-size: cover;
+		box-sizing: border-box;
 		display: flex;
+		min-height: 80vh;
 		justify-content: flex-end;
 		padding: 100px 0;
 		position: relative;
@@ -29,14 +31,13 @@ const style = `
 		& ._body {
 			--cloudOverlap: ${vars.marginContentX};
 
-			background-color: #fffffff0;
-			border: 0 solid #00000030;
+			background-color: #ffffffc0;
+			backdrop-filter: blur(4px);
 			border-radius: var(--cloudOverlap) 0 0 var(--cloudOverlap);
-			border-width: 1px 0 1px 1px;
 			height: 100%;
 			padding: ${vars.marginContentY} ${vars.marginContentX};
 			position: relative;
-			width: 50%;
+			width: 66%;
 
 		}
 
@@ -52,17 +53,7 @@ const style = `
 `;
 
 const template = () => `
-<section>
-	<header>
-		<h1>
-			<img
-				alt="Southeast Minnesota Capital Fund"
-				class="_mn"
-				src="/assets/images/smcf-mn.svg"
-				/>
-		</h1>
-	</header>
-
+<section style="background-image:url('/assets/images/rochester.jpg')">
 	<div class="_body">
 		<p class="${theme.typeClassNames.h2}">The <strong>Southeast Minnesota Capital Fund</strong> is a member-driven angel investment group focused on backing Minnesota entrepreneurs, and dedicated to fostering innovation and economic growth in Rochester and Greater Southeast Minnesota.</p>
 

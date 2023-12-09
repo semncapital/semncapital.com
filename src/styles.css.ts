@@ -47,10 +47,6 @@ a:hover {
 	color: ${vars.colorBrandHigh};
 }
 
-main {
-	padding-top: ${vars.navHeight};
-}
-
 p + p {
 	margin-top: 1em;
 }

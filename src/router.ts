@@ -23,3 +23,9 @@ export class Link extends LinkComponent {
 
 	router = router;
 }
+
+export const menu: Array<[keyof typeof routes, string]> = [
+	[`preferences`, `Investment Preferences`],
+	[`portfolio`, `Portfolio`],
+	[`contact`, `Contact`],
+];

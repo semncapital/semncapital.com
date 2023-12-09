@@ -21,9 +21,9 @@ const template = () => `
 		${new PreferencesComponent().render()}
 
 		${new ContactComponent().render()}
-	</main>
 
-	${new FooterComponent().render()}
+		${new FooterComponent().render()}
+	</main>
 </body>
 `;
 

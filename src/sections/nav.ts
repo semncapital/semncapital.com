@@ -1,41 +1,29 @@
 import { Component } from '@robertakarobin/web/component.ts';
 
 import { bp, vars } from '@src/theme.ts';
-import { Link } from '@src/router.ts';
+import { Link, menu } from '@src/router.ts';
 
 const style = `
 :host {
-	backdrop-filter: blur(4px);
-	background-color: ${vars.colorBg};
-	box-shadow: 0 0 10px #00000020;
-	box-sizing: border-box;
-	height: ${vars.navHeight};
 	left: 0;
-	padding: 0 ${vars.marginContentX};
 	position: fixed;
 	top: 0;
-	width: 100%;
 	z-index: ${vars.zNav};
 
-	& ._logo {
-		display: block;
-		height: 100%;
-
-		& img {
-			height: 100%;
-		}
-	}
-
 	& ._links {
-		transition: right 0.2s;
+		width: 100%;
 
 		& a {
 			align-items: center;
+			box-sizing: border-box;
 			display: inline-flex;
 			font-weight: 700;
-			height: ${vars.navHeight};
+			justify-content: center;
+			padding: ${vars.marginPageX};
+			text-align: center;
 			text-transform: uppercase;
 			text-decoration: none;
+			width: 100%;
 		}
 	}
 
@@ -46,82 +34,103 @@ const style = `
 		height: ${vars.navHeight};
 		font-size: 30px;
 		justify-content: center;
-		text-decoration: none;
-		transition: color 0.2s, right 0.2s;
+		transition: color 0.2s;
 		width: ${vars.navHeight};
-		z-index: ${vars.zNavToggle};
 
 		&:hover {
 			color: ${vars.colorBrandHigh};
 		}
 	}
 
-	& ._toggle-closed {
-		z-index: calc(${vars.zNavToggle} + 1);
-	}
-
 	@media ${bp.lessThan.tablet} {
-		display: flex;
-		justify-content: space-between;
+		width: 100%;
 
-		& ._links {
+		& ._panel {
 			background-color: #ffffff;
-			box-shadow: 0 0 20px 0 #00000020;
-			height: 100vh;
-			padding-top: ${vars.navHeight};
-			position: fixed;
-			top: 0;
-			width: ${vars.navWidth};
+			display: flex;
+			height: ${vars.navHeight};
+			position: relative;
+			width: 100%;
 
-			& a {
-				box-sizing: border-box;
+			& ._logo {
+				display: inline-flex;
+				height: 100%;
 				padding: 0 ${vars.marginPageX};
-				justify-content: right;
+			}
+
+			& ._links {
+				background-color: #ffffff;
+				box-shadow: 0 0 10px #00000060;
+				left: 0;
+				padding-top: ${vars.navHeight};
+				position: absolute;
+				transition: bottom 0.2s;
 				width: 100%;
+				z-index: -1;
+			}
+
+			&:focus-within {
+				& ._links {
+					bottom: calc(0px - (var(--menu-size) * ${vars.navHeight}));
+				}
+
+				& + ._toggle-closed {
+					visibility: visible;
+				}
+			}
+
+			&:not(:focus-within) {
+				& ._links {
+					bottom: 0;
+				}
+
+				& + ._toggle-closed {
+					visibility: hidden;
+				}
 			}
 		}
 
-		&:not(:focus-within) &._links {
-			right: calc(0px - ${vars.navWidth});
-		}
-
-		&:focus-within &._links {
-			right: 0;
-		}
-
 		& ._toggle {
-			position: fixed;
+			position: absolute;
 			right: 0;
+			text-decoration: none;
 			top: 0;
+			z-index: ${vars.zNavToggle};
 		}
 
-		& ._toggle-closed {
-			background-color: #ffffff;
-			right: calc(0px - ${vars.navHeight});
-		}
-
-		&:focus-within + ._toggle-closed {
-			right: 0;
+		& + main {
+			padding-top: ${vars.navHeight};
 		}
 	}
 
 	@media ${bp.moreThan.tablet} {
-		box-sizing: border-box;
-		display: flex;
-		height: ${vars.navHeight};
-		padding: 0 ${vars.marginContentX};
-
-		& ._links {
-			--link-paddingX: calc(${vars.marginPageX} / 2);
-
+		& ._panel {
+			align-items: center;
+			background-color: #ffffff;
+			box-shadow: 0 0 10px #00000020;
+			box-sizing: border-box;
 			display: flex;
-			flex-grow: 1;
-			justify-content: flex-end;
-			margin-left: var(--link-paddingX);
+			flex-direction: column;
+			height: 100vh;
+			position: relative;
+			justify-content: center;
+			transition: left 0.2s;
+			z-index: calc(${vars.zNavToggle} + 1);
 
-			& a {
-				padding: 0 var(--link-paddingX);
+			& ._logo {
+				display: block;
+				padding-bottom: 20px;
+
+				& img {
+					display: block;
+					margin: 0 auto;
+					width: calc(100% - (2 * ${vars.marginPageX}));
+				}
 			}
+		}
+
+		& + main {
+			padding-left: ${vars.navWidth};
 		}
 
 		& ._toggle {
@@ -132,31 +141,35 @@ const style = `
 `;
 
 const template = () => `
-<nav class="nav">
-	${new Link().to(`home`, `
-		<img
-			alt="Southeast Minnesota Capital Fund logo"
-			src="/assets/images/smcf-sm.svg"
-		/>
-	`, { class: `_logo` })}
+<nav style="--menu-size: ${menu.length}">
+	<div class="_panel">
+		${new Link().to(`home`, `
+			<img
+				alt="Southeast Minnesota Capital Fund logo"
+				src="/assets/images/smcf-sm.svg"
+			/>
+		`, { class: `_logo` })}
+
+		<button
+			aria-label="Open sidebar"
+			class="_toggle"
+			tabindex="0"
+			type="button"
+		>☰</button>
+
+		<ul class="_links">
+			${menu.map(([routeName, label]) => `
+				<li>${new Link().to(routeName, label)}</li>
+			`).join(``)}
+		</ul>
+	</div>
 
 	<button
-		aria-label="Open sidebar"
-		class="_toggle"
+		aria-label="Close sidebar"
+		class="_toggle _toggle-closed"
 		type="button"
 	>☰</button>
-
-	<ul class="_links">
-		<li>${new Link().to(`preferences`, `Investment Preferences`)}</li>
-		<li>${new Link().to(`portfolio`, `Portfolio`)}</li>
-		<li>${new Link().to(`contact`, `Contact`)}</li>
-	</ul>
 </nav>
-
-<button
-	aria-label="Close sidebar"
-	class="_toggle _toggle--closed"
->&times;</button>
 `;
 
 export class NavComponent extends Component {

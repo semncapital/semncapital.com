@@ -1,10 +1,10 @@
 {
 	"dependencies": {
-		"@robertakarobin/csslint": "^0.0.11",
-		"@robertakarobin/eslint-config-ts": "^0.0.21",
-		"@robertakarobin/htmlvalidate": "^0.0.3",
-		"@robertakarobin/util": "^0.0.198",
-		"@robertakarobin/web": "^0.0.44",
+		"@robertakarobin/csslint": "^0.0.13",
+		"@robertakarobin/eslint-config-ts": "^0.0.22",
+		"@robertakarobin/htmlvalidate": "^0.0.4",
+		"@robertakarobin/util": "^0.0.199",
+		"@robertakarobin/web": "^0.0.45",
 		"tsx": "^4.6.2"
 	},
 	"name": "semncapital.com",
