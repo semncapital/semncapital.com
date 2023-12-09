@@ -2,10 +2,14 @@ import { Resolver, Router } from '@robertakarobin/web/router.ts';
 import { LinkComponent } from '@robertakarobin/web/link.ts';
 
 export const router = new Router({
+	about: `/#about`,
 	contact: `/#contact`,
 	home: `/`,
+	info: `/#info`,
 	portfolio: `/#portfolio`,
 	preferences: `/#preferences`,
+	story: `/#story`,
+	who: `/#who`,
 });
 
 export const { routes } = router;

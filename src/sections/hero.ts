@@ -23,7 +23,7 @@ const style = `
 		background-size: cover;
 		box-sizing: border-box;
 		display: flex;
-		min-height: 80vh;
+		min-height: 100vh;
 		justify-content: flex-end;
 		padding: 100px 0;
 		position: relative;

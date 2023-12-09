@@ -51,6 +51,15 @@ p + p {
 	margin-top: 1em;
 }
 
+h1,
+h2,
+h3 {
+	& a[href^='/#'] {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
 strong {
 	font-weight: bold;
 }

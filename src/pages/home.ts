@@ -4,6 +4,7 @@ import { Page } from '@robertakarobin/web/component.ts';
 import { FooterComponent } from '@src/sections/footer.ts';
 import { NavComponent } from '@src/sections/nav.ts';
 
+import { AboutComponent } from '@src/sections/about.ts';
 import { CompaniesComponent } from '@src/sections/companies.ts';
 import { ContactComponent } from '@src/sections/contact.ts';
 import { HomeHero } from '@src/sections/hero.ts';
@@ -19,6 +20,8 @@ const template = () => `
 		${new CompaniesComponent().render()}
 
 		${new PreferencesComponent().render()}
+
+		${new AboutComponent().render()}
 
 		${new ContactComponent().render()}
 

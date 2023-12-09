@@ -5,12 +5,9 @@ import { theme, types, vars } from '@src/theme.ts';
 
 const style = `
 :host {
-	box-sizing: border-box;
-	margin: 0 auto;
-	max-width: 600px;
+	background-color: #ffffff;
 	padding: ${vars.marginContentY} ${vars.marginContentX};
 	text-align: center;
-	width: 100%;
 
 	& header {
 		margin: 30px 0;
@@ -21,12 +18,18 @@ const style = `
 
 		margin: 30px 0;
 	}
+
+	& ._body {
+		margin: 0 auto;
+		max-width: 600px;
+		width: 100%;
+	}
 }
 `;
 
 const content = `
 <markdown>
-### Questions about SE MN Capital Fund?
+### Questions about the Southeast MN Capital Fund?
 
 Please send an email to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
 
@@ -40,7 +43,9 @@ good fit for us, please send a short description of your company and/or a short 
 const template = () => `
 <section id="${routes.contact.idAttr}">
 	<header>
-		<h2 class="${theme.typeClassNames.h1}">Contact</h2>
+		<h2 class="${theme.typeClassNames.h1}">
+			${new Link().to(`contact`, `Contact`)}
+		</h2>
 	</header>
 
 	<div class="_body">
