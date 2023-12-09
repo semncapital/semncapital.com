@@ -55,7 +55,7 @@ const style = `
 const template = () => `
 <section style="background-image:url('/assets/images/rochester.jpg')">
 	<div class="_body">
-		<p class="${theme.typeClassNames.h2}">The <strong>Southeast Minnesota Capital Fund</strong> is a member-driven angel investment group focused on backing Minnesota entrepreneurs, and dedicated to fostering innovation and economic growth in Rochester and Greater Southeast Minnesota.</p>
+		<p class="${theme.typeClassNames.h2}">The <strong>Southeast Minnesota Capital Fund</strong> provides early-stage investment capital to Minnesota entrepreneurs building innovative, high growth companies. We invest across the state, with a preference for companies located in or connected to Rochester and SE Minnesota.</p>
 
 		<p>
 			${new Link().to(`contact`, `Get in touch`, { class: `button` })}

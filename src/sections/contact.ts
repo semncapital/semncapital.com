@@ -13,13 +13,13 @@ const style = `
 	width: 100%;
 
 	& header {
-		margin: ${vars.marginContentY} 0;
+		margin: 30px 0;
 	}
 
 	& h3 {
 		${types.h3}
 
-		margin: ${vars.marginContentY} 0;
+		margin: 30px 0;
 	}
 }
 `;
