@@ -60,6 +60,10 @@ h3 {
 	}
 }
 
+em {
+	font-style: italic;
+}
+
 strong {
 	font-weight: bold;
 }

@@ -21,7 +21,7 @@ export class FooterComponent extends Component {
 	<footer>
 		<h2 class="${theme.typeClassNames.h2}">Southeast Minnesota Capital Fund</h2>
 
-		<address>221 1st Avenue SW. Suite 202<br />
+		<address>221 1st Avenue SW. Suite 600<br />
 		Rochester, MN 55902</address>
 
 		<p><a href="mailto:exec@semncapital.com">exec@semncapital.com</a></p>

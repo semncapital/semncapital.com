@@ -57,9 +57,7 @@ const sections: Array<[string, keyof typeof routes, string]> = [
 		`who`,
 		`
 <markdown>
-David Herbert and Harry Hoffman co-manage SMCF and provide investment and
-administrative management services to Funds I and II. Both are experienced
-business leaders and investment professionals who had long careers at Mayo Clinic. Together, in 2012, they formed Mayo Clinic's venture co-investment program which today has assets under management of well over $100 million and many successful exits. David and Harry are both personal investors in SMCF Funds I and II.
+David Herbert and Harry Hoffman co-manage SMCF and provide investment and administrative management services to Funds I and II. Both are experienced business leaders and investment professionals who had long careers at Mayo Clinic. Together, in 2012, they formed Mayo Clinic's venture co-investment program which today has assets under management of well over $100 million and many successful exits. David and Harry are both personal investors in SMCF Funds I and II.
 
 David Herbert retired from Mayo Clinic in 2015 after a 21-year career as a business professional during which he held leadership positions in Mayo Clinic Ventures, Mayo Clinic Laboratories and Mayo Clinic Global Business Solutions. At MCV, David oversaw Mayo's commercial partnership with Exact Labs which led to the development of Cologuard, Exact's highly successful non-invasive diagnostic test for colon cancer. David holds a BA degree from Stanford University and an MBA from the University of St. Thomas.
 

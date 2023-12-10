@@ -16,7 +16,7 @@ const style = `
 	& h3 {
 		${types.h3}
 
-		margin: 30px 0;
+		margin-top: 30px;
 	}
 
 	& ._body {
@@ -33,10 +33,9 @@ const content = `
 
 Please send an email to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
 
-### Entrepreneurs
+### Entrepreneurs:
 
-Please first review our ${new Link().to(`preferences`, `Investment Preferences`)}. If you feel your company may be a
-good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
+*Please first review our ${new Link().to(`preferences`, `Investment Preferences`)}. If you feel your company may be a good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).*
 </markdown>
 `;
 
