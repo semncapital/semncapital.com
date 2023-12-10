@@ -35,7 +35,7 @@ Please send an email to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
 
 ### Entrepreneurs:
 
-*Please first review our [${paths.preferences}](Investment Preferences). If you feel your company may be a good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).*
+*Please first review our [Investment Preferences](${paths.preferences}). If you feel your company may be a good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).*
 </markdown>
 `;
 
