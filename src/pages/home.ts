@@ -1,6 +1,5 @@
 import { Page } from '@robertakarobin/web/component.ts';
 
-// import about from './sections/about.ts';
 import { FooterComponent } from '@src/sections/footer.ts';
 import { NavComponent } from '@src/sections/nav.ts';
 

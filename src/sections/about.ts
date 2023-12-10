@@ -1,6 +1,6 @@
 import { Component } from '@robertakarobin/web/component.ts';
 
-import { Link, routes } from '@src/router.ts';
+import { hashes, paths } from '@src/router.ts';
 import { theme, vars } from '@src/theme.ts';
 
 const person = (name: string, title: string, description: string) => ({
@@ -51,7 +51,7 @@ const leadershipByOrder = [ // eslint-disable-line
 	leadership.john,
 ];
 
-const sections: Array<[string, keyof typeof routes, string]> = [
+const sections: Array<[string, keyof typeof paths, string]> = [
 	[
 		`Who we are`,
 		`who`,
@@ -124,17 +124,17 @@ export class AboutComponent extends Component {
 	}
 
 	template = () => `
-<section id="${routes.about.idAttr}">
+<section id="${hashes.about}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
-			${new Link().to(`about`, `About us`)}
+			<a href="#${paths.about}">About us</a>
 		</h2>
 	</header>
 
 	${sections.map(([title, routeName, body]) => `
-		<div class="_section" id="${routes[routeName].idAttr}">
+		<div class="_section" id="${hashes[routeName]}">
 			<h3 class="${theme.typeClassNames.h2}">
-				${new Link().to(routeName, title)}
+				<a href="${paths[routeName]}">${title}</a>
 			</h3>
 
 			${body}

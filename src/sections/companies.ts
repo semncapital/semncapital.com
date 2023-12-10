@@ -1,7 +1,7 @@
 import { Component } from '@robertakarobin/web/component.ts';
 
 import { bp, theme, vars } from '@src/theme.ts';
-import { Link, routes } from '@src/router.ts';
+import { hashes, paths } from '@src/router.ts';
 
 const company = (
 	title: string,
@@ -222,10 +222,10 @@ const style = `
 `;
 
 const template = () => `
-<section id="${routes.portfolio.idAttr}">
+<section id="${hashes.portfolio}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
-			${new Link().to(`portfolio`, `Our portfolio`)}
+			<a href="${paths.portfolio}">Our portfolio</a>
 		</h2>
 	</header>
 

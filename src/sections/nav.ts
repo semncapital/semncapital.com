@@ -1,7 +1,7 @@
 import { Component } from '@robertakarobin/web/component.ts';
 
 import { bp, vars } from '@src/theme.ts';
-import { Link, menu } from '@src/router.ts';
+import { menu, paths } from '@src/router.ts';
 
 const style = `
 :host {
@@ -143,12 +143,15 @@ const style = `
 const template = () => `
 <nav style="--menu-size: ${menu.length}">
 	<div class="_panel">
-		${new Link().to(`home`, `
+		<a
+			class="_logo"
+			href="${paths.home}"
+		>
 			<img
 				alt="Southeast Minnesota Capital Fund logo"
 				src="/assets/images/smcf-sm.svg"
 			/>
-		`, { class: `_logo` })}
+		</a>
 
 		<button
 			aria-label="Open sidebar"
@@ -159,7 +162,11 @@ const template = () => `
 
 		<ul class="_links">
 			${menu.map(([routeName, label]) => `
-				<li>${new Link().to(routeName, label)}</li>
+				<li>
+					<a href="${paths[routeName]}">
+						${label}
+					</a>
+				</li>
 			`).join(``)}
 		</ul>
 	</div>

@@ -1,7 +1,7 @@
 import { Component } from '@robertakarobin/web/component.ts';
 
 import { bp, theme, vars } from '@src/theme.ts';
-import { Link, routes } from '@src/router.ts';
+import { hashes, paths } from '@src/router.ts';
 
 const preference = (
 	title: string,
@@ -98,10 +98,10 @@ const style = `
 `;
 
 const template = () => `
-<section id="${routes.preferences.idAttr}">
+<section id="${hashes.preferences}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
-			${new Link().to(`preferences`, `Investment preferences`)}
+			<a href="${paths.preferences}">Investment preferences</a>
 		</h2>
 	</header>
 

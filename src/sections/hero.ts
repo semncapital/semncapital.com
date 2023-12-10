@@ -1,7 +1,7 @@
 import { Component } from '@robertakarobin/web/component.ts';
 
 import { bp, theme, vars } from '@src/theme.ts';
-import { Link } from '@src/router.ts';
+import { paths } from '@src/router.ts';
 
 const style = `
 :host {
@@ -58,7 +58,7 @@ const template = () => `
 		<p class="${theme.typeClassNames.h2}">The <strong>Southeast Minnesota Capital Fund</strong> provides early-stage investment capital to Minnesota entrepreneurs building innovative, high growth companies. We invest across the state, with a preference for companies located in or connected to Rochester and SE Minnesota.</p>
 
 		<p>
-			${new Link().to(`contact`, `Get in touch`, { class: `button` })}
+			<a href="${paths.contact}" class="button">Get in touch</a>
 		</p>
 	</div>
 </section>

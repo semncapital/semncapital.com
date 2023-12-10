@@ -1,6 +1,6 @@
 import { Component } from '@robertakarobin/web/component.ts';
 
-import { Link, routes } from '@src/router.ts';
+import { hashes, paths } from '@src/router.ts';
 import { theme, types, vars } from '@src/theme.ts';
 
 const style = `
@@ -35,15 +35,15 @@ Please send an email to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
 
 ### Entrepreneurs:
 
-*Please first review our ${new Link().to(`preferences`, `Investment Preferences`)}. If you feel your company may be a good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).*
+*Please first review our [${paths.preferences}](Investment Preferences). If you feel your company may be a good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).*
 </markdown>
 `;
 
 const template = () => `
-<section id="${routes.contact.idAttr}">
+<section id="${hashes.contact}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
-			${new Link().to(`contact`, `Contact`)}
+			<a href="${paths.contact}">Contact</a>
 		</h2>
 	</header>
 
