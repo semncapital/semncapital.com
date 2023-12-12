@@ -127,7 +127,7 @@ export class AboutComponent extends Component {
 <section id="${hashes.about}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
-			<a href="#${paths.about}">About us</a>
+			<a href="${paths.about}">About us</a>
 		</h2>
 	</header>
 
