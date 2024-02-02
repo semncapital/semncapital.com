@@ -1,4 +1,4 @@
-import { Component } from '@robertakarobin/web/component.ts';
+import { Component } from '@robertakarobin/util/component.ts';
 
 import { bp, theme, vars } from '@src/theme.ts';
 import { hashes, paths } from '@src/router.ts';
@@ -44,7 +44,7 @@ const preferencesByOrder = [
 	preferences.entrepreneurs,
 ];
 
-const style = `
+const style = /*css*/`
 :host {
 	background-color: #ffffff;
 	padding: ${vars.marginContentY} ${vars.marginContentX};
@@ -97,8 +97,11 @@ const style = `
 }
 `;
 
-const template = () => `
-<section id="${hashes.preferences}">
+@Component.define({ style })
+export class PreferencesComponent extends Component.custom(`section`) {
+	static style = style;
+	template = () => /*html*/`
+<host id="${hashes.preferences}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
 			<a href="${paths.preferences}">Investment preferences</a>
@@ -118,13 +121,6 @@ const template = () => `
 			`).join(`\n`)
 		}
 	</ul>
-</section>
-`;
-
-export class PreferencesComponent extends Component {
-	static style = style;
-	static {
-		this.init();
-	}
-	template = template;
+</host>
+	`;
 }

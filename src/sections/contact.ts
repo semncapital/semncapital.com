@@ -1,9 +1,9 @@
-import { Component } from '@robertakarobin/web/component.ts';
+import { Component } from '@robertakarobin/util/component.ts';
 
 import { hashes, paths } from '@src/router.ts';
 import { theme, types, vars } from '@src/theme.ts';
 
-const style = `
+const style = /*css*/`
 :host {
 	background-color: #ffffff;
 	padding: ${vars.marginContentY} ${vars.marginContentX};
@@ -27,7 +27,18 @@ const style = `
 }
 `;
 
-const content = `
+@Component.define({ style })
+export class ContactComponent extends Component.custom(`section`) {
+	static style = style;
+	template = () => /*html*/`
+<host id="${hashes.contact}">
+	<header>
+		<h2 class="${theme.typeClassNames.h1}">
+			<a href="${paths.contact}">Contact</a>
+		</h2>
+	</header>
+
+	<div class="_body">
 <markdown>
 ### Questions about the Southeast MN Capital Fund?
 
@@ -37,26 +48,7 @@ Please send an email to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).
 
 *Please first review our [Investment Preferences](${paths.preferences}). If you feel your company may be a good fit for us, please send a short description of your company and/or a short slide deck to [exec@SEMNCapital.com](mailto:exec@SEMNCapital.com).*
 </markdown>
-`;
-
-const template = () => `
-<section id="${hashes.contact}">
-	<header>
-		<h2 class="${theme.typeClassNames.h1}">
-			<a href="${paths.contact}">Contact</a>
-		</h2>
-	</header>
-
-	<div class="_body">
-		${content}
 	</div>
-</section>
-`;
-
-export class ContactComponent extends Component {
-	static style = style;
-	static {
-		this.init();
-	}
-	template = template;
+</host>
+	`;
 }

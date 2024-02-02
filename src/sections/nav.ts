@@ -1,9 +1,9 @@
-import { Component } from '@robertakarobin/web/component.ts';
+import { Component } from '@robertakarobin/util/component.ts';
 
 import { bp, vars } from '@src/theme.ts';
 import { menu, paths } from '@src/router.ts';
 
-const style = `
+const style = /*css*/`
 :host {
 	left: 0;
 	position: fixed;
@@ -140,8 +140,11 @@ const style = `
 }
 `;
 
-const template = () => `
-<nav style="--menu-size: ${menu.length}">
+@Component.define({ style })
+export class NavComponent extends Component.custom(`nav`) {
+	static style = style;
+	template = () => /*html*/`
+<host style="--menu-size: ${menu.length}">
 	<div class="_panel">
 		<a
 			class="_logo"
@@ -176,15 +179,6 @@ const template = () => `
 		class="_toggle _toggle-closed"
 		type="button"
 	>☰</button>
-</nav>
-`;
-
-export class NavComponent extends Component {
-	static style = style;
-
-	static {
-		this.init();
-	}
-
-	template = template;
+</host>
+	`;
 }

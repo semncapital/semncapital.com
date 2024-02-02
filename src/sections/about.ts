@@ -1,4 +1,4 @@
-import { Component } from '@robertakarobin/web/component.ts';
+import { Component } from '@robertakarobin/util/component.ts';
 
 import { hashes, paths } from '@src/router.ts';
 import { theme, vars } from '@src/theme.ts';
@@ -93,7 +93,7 @@ Harry and David invest SMCF capital with the objective of earning members a 2.5X
 	],
 ];
 
-const style = `
+const style = /*css*/`
 :host {
 	padding: ${vars.marginContentY} ${vars.marginContentX};
 
@@ -116,15 +116,12 @@ const style = `
 }
 `;
 
-export class AboutComponent extends Component {
+@Component.define({ style })
+export class AboutComponent extends Component.custom(`section`) {
 	static style = style;
 
-	static {
-		this.init();
-	}
-
-	template = () => `
-<section id="${hashes.about}">
+	template = () => /*html*/`
+<host id="${hashes.about}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
 			<a href="${paths.about}">About us</a>
@@ -140,6 +137,6 @@ export class AboutComponent extends Component {
 			${body}
 		</div>
 	`).join(``)}
-</section>
-	`;
+</host>
+`;
 }

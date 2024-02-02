@@ -1,4 +1,4 @@
-import { Component } from '@robertakarobin/web/component.ts';
+import { Component } from '@robertakarobin/util/component.ts';
 
 import { bp, theme, vars } from '@src/theme.ts';
 import { hashes, paths } from '@src/router.ts';
@@ -153,7 +153,7 @@ const companiesByOrder = Object.values(companies)
 	.filter(company => !(company.isExited))
 	.sort((a, b) => a.year - b.year);
 
-const style = `
+const style = /*css*/`
 :host {
 	margin: ${vars.marginContentY} auto;
 
@@ -221,8 +221,12 @@ const style = `
 }
 `;
 
-const template = () => `
-<section id="${hashes.portfolio}">
+@Component.define({ style })
+export class CompaniesComponent extends Component.custom(`section`) {
+	static style = style;
+
+	template = () => /*html*/`
+<host id="${hashes.portfolio}">
 	<header>
 		<h2 class="${theme.typeClassNames.h1}">
 			<a href="${paths.portfolio}">Our portfolio</a>
@@ -249,15 +253,6 @@ const template = () => `
 			</li>
 		`).join(`\n`)}
 	</ul>
-</section>
+</host>
 `;
-
-export class CompaniesComponent extends Component {
-	static style = style;
-
-	static {
-		this.init();
-	}
-
-	template = template;
 }

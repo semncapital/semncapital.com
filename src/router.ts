@@ -1,4 +1,4 @@
-import { Resolver, Router } from '@robertakarobin/web/router.ts';
+import { Resolver, Router } from '@robertakarobin/util/router.ts';
 
 export const router = new Router({
 	about: `/#about`,
@@ -14,7 +14,7 @@ export const router = new Router({
 export const { hashes, paths } = router;
 
 export const resolver = new Resolver(router, async() => {
-	return new (await import(`./pages/home.ts`)).HomePage().set({
+	return new (await import(`./pages/home.ts`)).HomePage({
 		title: `SEMN Capital Fund`,
 	});
 });

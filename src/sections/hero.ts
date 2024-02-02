@@ -1,9 +1,9 @@
-import { Component } from '@robertakarobin/web/component.ts';
+import { Component } from '@robertakarobin/util/component.ts';
 
 import { bp, theme, vars } from '@src/theme.ts';
 import { paths } from '@src/router.ts';
 
-const style = `
+const style = /*css*/`
 :host {
 	@media ${bp.lessThan.tablet} {
 		background-color: #ffffff;
@@ -52,8 +52,11 @@ const style = `
 }
 `;
 
-const template = () => `
-<section style="background-image:url('/assets/images/rochester.jpg')">
+@Component.define({ style })
+export class HomeHero extends Component.custom(`header`) {
+	static style = style;
+	template = () => /*html*/`
+<host style="background-image:url('/assets/images/rochester.jpg')">
 	<div class="_body">
 		<p class="${theme.typeClassNames.h2}">The <strong>Southeast Minnesota Capital Fund</strong> provides early-stage investment capital to Minnesota entrepreneurs building innovative, high growth companies. We invest across the state, with a preference for companies located in or connected to Rochester and SE Minnesota.</p>
 
@@ -61,13 +64,6 @@ const template = () => `
 			<a href="${paths.contact}" class="button">Get in touch</a>
 		</p>
 	</div>
-</section>
+</host>
 `;
-
-export class HomeHero extends Component {
-	static style = style;
-	static {
-		this.init();
-	}
-	template = template;
 }

@@ -7,7 +7,7 @@ import {
 	vname,
 } from './theme.ts';
 
-export default `
+export default /*css*/`
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 @import url('/assets/css/fontawesome.min.css');
 
