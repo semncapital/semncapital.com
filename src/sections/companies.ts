@@ -41,12 +41,12 @@ const companies = {
 		`ambient.png`,
 		`https://ambientclinical.com/`,
 	),
-	dyamx: company(
-		`DyaMX`,
+	endogenex: company(
+		`Endogenex`,
 		18.60,
 		`Devices for GI/metabolic disease`,
-		`dyamx.png`,
-		``,
+		`endogenex.png`,
+		`https://www.endogenex.com/`,
 	),
 	geneticure: company(
 		`Geneticure`,
@@ -76,6 +76,13 @@ const companies = {
 		`marblehead.png`,
 		``,
 		true,
+	),
+	melodi: company(
+		`Melodi Health`,
+		24.01,
+		`Devices for breast reconstruction`,
+		`melodi.png`,
+		`https://www.melodihealth.com/`,
 	),
 	mnmed: company(
 		`Minnesota Medical Technologies`,
