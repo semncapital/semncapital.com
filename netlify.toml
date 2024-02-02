@@ -1,0 +1,4 @@
+[build]
+	base = "/"
+	command = "ENV=PROD tsx ./build.ts"
+	publish = "dist/"
