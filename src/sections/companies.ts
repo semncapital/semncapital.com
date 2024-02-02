@@ -122,7 +122,7 @@ const companies = {
 	phemonix: company(
 		`Phenomix Sciences`,
 		21.10,
-		`Diagnostics`,
+		`Precision medicine for obesity`,
 		`phenomix.png`,
 		`https://www.phenomixsciences.com/`,
 	),

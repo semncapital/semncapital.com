@@ -1,6 +1,6 @@
 import { Component } from '@robertakarobin/util/component.ts';
 
-import { theme, vars } from '@src/theme.ts';
+import { bp, theme, vars } from '@src/theme.ts';
 
 const style = /*css*/`
 :host {
@@ -11,6 +11,10 @@ const style = /*css*/`
 
 	& a {
 		color: #ffffff;
+	}
+
+	@media ${bp.moreThan.tablet} {
+		padding-left: calc(${vars.navWidth} + ${vars.marginContentX});
 	}
 }
 `;
