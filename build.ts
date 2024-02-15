@@ -11,10 +11,16 @@ class CustomBuilder extends Builder {
 	}
 
 	formatHead(input: Parameters<Builder[`formatHead`]>[0]) {
-		return super.formatHead({
-			...input,
-			description: `The Southeast Minnesota Capital Fund provides early-stage investment capital to Minnesota entrepreneurs building innovative, high growth companies. We invest across the state, with a preference for companies located in or connected to Rochester and SE Minnesota.`,
-		});
+		return /*html*/`
+			${super.formatHead({
+				...input,
+				description: `The Southeast Minnesota Capital Fund provides early-stage investment capital to Minnesota entrepreneurs building innovative, high growth companies. We invest across the state, with a preference for companies located in or connected to Rochester and SE Minnesota.`,
+			})}
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+			<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+		`;
 	}
 }
 
