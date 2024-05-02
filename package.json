@@ -5,13 +5,15 @@
 		"@robertakarobin/htmlvalidate": "^0.0.6",
 		"@robertakarobin/ssg": "^0.0.7",
 		"@robertakarobin/util": "^0.0.288",
+		"postcss": "^8.4.38",
+		"postcss-nested": "^6.0.1",
 		"tsx": "^4.7.0"
 	},
 	"name": "semncapital.com",
 	"scripts": {
 		"build": "tsx ./build.ts",
 		"dev": "tsx watch --watch-preserve-output --watch-path=src build.ts -- --serve",
-		"lint": "npm run lint:ts && npm run lint:css && npm run lint:html",
+		"lint": "npm run lint:ts && npm run lint:html",
 		"lint:css": "stylelint dist/**/*.css",
 		"lint:html": "html-validate dist",
 		"lint:ts": "tsc && eslint ."

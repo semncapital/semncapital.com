@@ -1,4 +1,6 @@
 import { execSync } from 'child_process';
+import postCss from 'postcss';
+import postcssNested from 'postcss-nested';
 
 import { Builder } from '@robertakarobin/ssg/build.ts';
 
@@ -8,6 +10,15 @@ class CustomBuilder extends Builder {
 			execSync(`npm run lint`, { encoding: `utf8`, stdio: `inherit` });
 		} catch (error) {
 		}
+	}
+
+	async formatCss(input: string) {
+		const unnested = await postCss([postcssNested]).process(input, {
+			from: undefined,
+		});
+		let css = unnested.css;
+		css = await super.formatCss(unnested.css);
+		return css;
 	}
 
 	formatHead(input: Parameters<Builder[`formatHead`]>[0]) {
